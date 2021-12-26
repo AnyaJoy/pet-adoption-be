@@ -39,7 +39,7 @@ From the back-end admins should be able to: (all routes are protected to admins 
 
 ### Screenshots
 
-![](./screenshots/Screenshot_3.png)
+![](./screenshots/Screenshot_2u.png)
 ![](./screenshots/Screenshot_1.png)
 
 <!-- ### Links
