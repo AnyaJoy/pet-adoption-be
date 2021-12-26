@@ -4,7 +4,7 @@ In development...
 
 # Pet Adoption Project
 
-A pet-adoption web platform, where users can sign up, search and adopt pets. This repository only contains front-end part of the project.
+A pet-adoption web platform, where users can sign up, search and adopt pets. This repository only contains back-end part of the project.
 
 ## Table of contents
 
