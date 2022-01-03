@@ -5,7 +5,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: process.env.SQL_PASSWORD
-      MYSQL_DATABASE: pet_adoption
+      MYSQL_DATABASE: process.env.DB_NAME
     ports:
       - 3306:3306
     volumes:

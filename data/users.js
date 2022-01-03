@@ -22,6 +22,7 @@ async function getUser(id) {
 async function addUser(req) {
   try {
     const sql = SQL`INSERT INTO users (email, password_hash, first_name, last_name, type, bio) VALUES (${req.body.email}, ${req.body.hashPassword}, ${req.body.first_name}, ${req.body.last_name}, ${req.body.type}, ${req.body.bio})`;
+    console.log("addUser")
     const user = await query(sql);
   } catch (err) {
     console.log(err);
