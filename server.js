@@ -17,12 +17,12 @@ app.get("/", (req, res) => {
   res.send('Hello to Pet-Adoption API')
 });
 
-// postgrator
-//   .migrate()
-//   .then((result) => {
-//     console.log(`migrated db successfully:`, result);
+postgrator
+  .migrate()
+  .then((result) => {
+    console.log(`migrated db successfully:`, result);
     app.listen(PORT, () => {
       console.log(`Running on port ${PORT}`);
     });
-  // })
-  // .catch((error) => console.error(error));
+  })
+  .catch((error) => console.error(error));
