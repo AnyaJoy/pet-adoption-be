@@ -6,7 +6,7 @@ exports.signupSchema = {
     email: { type: "string", format: "email" },
     password: { type: "string", minLength: 6 },
     repassword: { type: "string" },
-    type: { type: "string" },
+    type: { type: "string", enum: ["", "User"] }, // + admin in future
     bio: { type: "string" },
   },
   required: [

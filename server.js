@@ -1,5 +1,5 @@
 const express = require("express");
-const { postgrator } = require("./lib/db");
+// const { postgrator } = require("./lib/db");
 const app = express();
 const cors = require("cors");
 const PORT = process.env.PORT || 3006;

@@ -6,10 +6,6 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "deploy": "heroku container:push web && heroku container:release web",
-    "db:deploy": "heroku container:push web && heroku container:release web",
-    "db:up": "docker compose up",
-    "db:down": "docker compose down",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
