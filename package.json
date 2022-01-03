@@ -32,10 +32,10 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "path": "^0.12.7",
-    "postgrator": "^4.1.1",
     "serve": "^13.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "postgrator": "^4.1.1"
   }
 }
