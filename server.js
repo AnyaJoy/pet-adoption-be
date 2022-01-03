@@ -13,9 +13,9 @@ app.use(cors());
 app.use("/pets", petsRoute);
 app.use("/users", usersRoute);
 
-app.get("/", (req, res) => {
-  res.send('Hello to Pet-Adoption API')
-});
+// app.get("/", (req, res) => {
+//   res.send('Hello to Pet-Adoption API')
+// });
 
 postgrator
   .migrate()
