@@ -2,7 +2,7 @@ const express = require("express");
 const { postgrator } = require("./lib/db");
 const app = express();
 const cors = require("cors");
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORTNODE;
 require("dotenv").config();
 const petsRoute = require("./routes/pets");
 const usersRoute = require("./routes/users");
@@ -13,9 +13,9 @@ app.use(cors());
 app.use("/pets", petsRoute);
 app.use("/users", usersRoute);
 
-// app.get("/", (req, res) => {
-//   res.send('Hello to Pet-Adoption API')
-// });
+app.get("/", (req, res) => {
+  res.send('Hello to Pet-Adoption API')
+});
 
 postgrator
   .migrate()

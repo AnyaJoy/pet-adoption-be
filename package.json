@@ -5,10 +5,14 @@
   "main": "server.js",
   "engines": {
     "node": "12.11.1"
-    },
+  },
   "scripts": {
-    "start": "node server.js",
-    "devstart": "nodemon server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
+    "start": "NODE_ENV=production node server.js",
+    "deploy": "heroku container:push web && heroku container:release web",
+    "db:deploy": "heroku container:push web && heroku container:release web",
+    "db:up": "docker compose up",
+    "db:down": "docker compose down",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
