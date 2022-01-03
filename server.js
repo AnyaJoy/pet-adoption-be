@@ -2,7 +2,7 @@ const express = require("express");
 const { postgrator } = require("./lib/db");
 const app = express();
 const cors = require("cors");
-const PORT = process.env.PORTNODE;
+const PORT = process.env.PORT_NODE;
 require("dotenv").config();
 const petsRoute = require("./routes/pets");
 const usersRoute = require("./routes/users");
