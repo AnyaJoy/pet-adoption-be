@@ -6,8 +6,9 @@ exports.signupSchema = {
     email: { type: "string", format: "email" },
     password: { type: "string", minLength: 6 },
     repassword: { type: "string" },
-    type: { type: "string", enum: ["", "User"] }, // + admin in future
+    type: { type: "string" },
     bio: { type: "string" },
+    picture: { type: "string" },
   },
   required: [
     "first_name",
@@ -17,6 +18,7 @@ exports.signupSchema = {
     "repassword",
     "type",
     "bio",
+    "picture"
   ],
   additionalProperties: false,
   errorMessage: {
@@ -87,8 +89,9 @@ exports.updateUserSchema = {
     bio: { type: "string" },
     first_name: { type: "string" },
     last_name: { type: "string" },
+    picture: { type: "string" },
   },
-  required: ["email", "password", "bio", "first_name", "last_name"],
+  required: ["email", "password", "bio", "first_name", "last_name", "picture"],
   additionalProperties: false,
   errorMessage: {
     properties: {

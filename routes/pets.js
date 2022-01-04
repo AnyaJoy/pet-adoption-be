@@ -3,6 +3,7 @@ const { checkToken } = require("../middleware/checkToken");
 const { validateBody } = require("../middleware/validateBody");
 const { checkUserType } = require("../middleware/checkUserType");
 const { uploadToCloudinary } = require("../middleware/cloudinary");
+const { addPetStatus } = require("../middleware/addPetStatus")
 const { upload } = require("../middleware/multipart");
 const schemas = require("../schemas/allSchemas");
 const router = express.Router();
@@ -11,7 +12,7 @@ const petsController = require("../controllers/petsControllers");
 router
 .route("/")
 .get(petsController.getPetsController)
-.post(checkToken, checkUserType, upload.single("picture"), uploadToCloudinary, validateBody(schemas.petSchema), petsController.addPetController)
+.post(checkToken, checkUserType, upload.single("picture"), uploadToCloudinary, addPetStatus, validateBody(schemas.petSchema), petsController.addPetController)
 
 router
 .route("/:id")
