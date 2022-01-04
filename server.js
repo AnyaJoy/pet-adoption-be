@@ -1,5 +1,5 @@
 const express = require("express");
-// const { postgrator } = require("./lib/db");
+const { postgrator } = require("./lib/db");
 const app = express();
 const cors = require("cors");
 const PORT = process.env.PORT || 3006;
@@ -14,15 +14,21 @@ app.use("/pets", petsRoute);
 app.use("/users", usersRoute);
 
 app.get("/", (req, res) => {
-  res.send('Hello to Pet-Adoption API')
+  res.send("Pet-Adoption API live!");
 });
 
-// postgrator
-//   .migrate()
-//   .then((result) => {
-//     console.log(`migrated db successfully:`, result);
-    app.listen(PORT, () => {
-      console.log(`Running on port ${PORT}`);
-    });
-  // })
-  // .catch((error) => console.error(error));
+if (process.env.MODE == "development") {
+  postgrator
+    .migrate()
+    .then((result) => {
+      console.log(`migrated db successfully:`, result);
+      app.listen(PORT, () => {
+        console.log(`Running on port ${PORT}`);
+      });
+    })
+    .catch((error) => console.error(error));
+} else {
+  app.listen(PORT, () => {
+    console.log(`Running on port ${PORT}`);
+  });
+}
