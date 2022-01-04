@@ -21,7 +21,7 @@ async function getUser(id) {
 
 async function addUser(req) {
   try {
-    const sql = SQL`INSERT INTO users (email, password_hash, first_name, last_name, type, bio) VALUES (${req.body.email}, ${req.body.hashPassword}, ${req.body.first_name}, ${req.body.last_name}, ${req.body.type}, ${req.body.bio})`;
+    const sql = SQL`INSERT INTO users (email, password_hash, first_name, last_name, type, bio, picture) VALUES (${req.body.email}, ${req.body.hashPassword}, ${req.body.first_name}, ${req.body.last_name}, ${req.body.type}, ${req.body.bio}, ${req.body.picture})`;
     console.log("addUser")
     const user = await query(sql);
   } catch (err) {
@@ -41,7 +41,7 @@ async function getUserByEmail(email) {
 
 async function editUser(req) {
   try {
-    const sql = SQL`UPDATE users SET email=${req.body.email}, bio=${req.body.bio}, first_name=${req.body.first_name}, last_name=${req.body.last_name}, password_hash=${req.body.hashPassword} WHERE id = ${req.params.id};`
+    const sql = SQL`UPDATE users SET email=${req.body.email}, bio=${req.body.bio}, first_name=${req.body.first_name}, last_name=${req.body.last_name}, password_hash=${req.body.hashPassword}, picture=${req.body.picture} WHERE id = ${req.params.id};`
   
     const editedUser = await query(sql);
     return editedUser;
