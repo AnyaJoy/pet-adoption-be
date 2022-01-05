@@ -39,7 +39,6 @@ From the back-end admins should be able to: (all routes are protected to admins 
 ### Screenshots
 
 ![](./screenshots/Screenshot_1.png)
-![](./screenshots/Screenshot_2.png)
 
 ### Links
 
@@ -56,7 +55,7 @@ From the back-end admins should be able to: (all routes are protected to admins 
 
 ### What I learned
 In this project I learned how to:
-- use Node.js
+- use Node.js and Express
 - create and connect to server and MySQL database
 - write end points
 - validate requests
